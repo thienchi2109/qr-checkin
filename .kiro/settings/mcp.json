@@ -1,0 +1,27 @@
+{
+  "mcpServers": {
+    "serena": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/oraios/serena",
+        "serena-mcp-server",
+        "--project",
+        "D:\\LTSpa-management",
+        "--context",
+        "ide-assistant"
+      ],
+      "disabled": false,
+      "autoApprove": [
+        "list_dir",
+        "list_dir",
+        "find_file",
+        "search_for_pattern",
+        "search_for_pattern",
+        "get_symbols_overview",
+        "find_symbol",
+        "replace_symbol_body"
+      ]
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "name": "qrcode-checkin",
+  "version": "1.0.0",
+  "description": "QR code-based check-in system for events",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "db:init": "node src/database/init.js",
+    "db:migrate": "node src/database/migrate.js",
+    "db:test": "node -e \"require('./src/config/database').testConnection()\""
+  },
+  "keywords": [
+    "qr-code",
+    "checkin",
+    "events",
+    "geofencing"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.2",
+    "pg": "^8.16.3",
+    "qrcode": "^1.5.4",
+    "redis": "^5.7.0"
+  },
+  "devDependencies": {
+    "jest": "^30.0.5",
+    "nodemon": "^3.1.10",
+    "supertest": "^7.1.4"
+  }
+}
