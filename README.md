@@ -53,13 +53,31 @@ cd qr-checkin
 # Cài đặt dependencies
 npm install
 
-# Tạo file môi trường
-cp .env.example .env
+# Tạo file môi trường từ template
+cp .env.template .env
 
-# Chỉnh sửa cấu hình trong .env
-# DATABASE_URL=mongodb://localhost:27017/qr-checkin
-# JWT_SECRET=your-secret-key
-# PORT=3000
+# ⚠️  QUAN TRỌNG: Chỉnh sửa .env với credentials thật
+# 1. Thay thế DATABASE_URL với connection string thật
+# 2. Generate JWT_SECRET: openssl rand -base64 32
+# 3. Generate QR_ENCRYPTION_KEY: openssl rand -hex 16
+# 4. Cấu hình các thông số khác theo môi trường
+```
+
+### 🔒 Security Setup (QUAN TRỌNG)
+```bash
+# 1. Generate secure JWT secret (32+ characters)
+openssl rand -base64 32
+
+# 2. Generate QR encryption key (exactly 32 characters)
+openssl rand -hex 16
+
+# 3. Tạo database credentials an toàn
+# - Sử dụng strong passwords
+# - Enable SSL cho production
+# - Restrict database access
+
+# 4. Cấu hình CORS cho production
+# CORS_ORIGIN=https://yourdomain.com
 ```
 
 ### Chạy ứng dụng
